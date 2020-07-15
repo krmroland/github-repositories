@@ -2,19 +2,21 @@
 
 namespace App\Services\GitHub;
 
-use Github\Client;
 use App\Services\GitHub\Contracts\GithubApi;
+use Github\Client;
 
 class PhpGithubApi implements GithubApi
 {
     /**
      * The github client
+     *
      * @var \Github\Client
      */
     protected $client;
 
     /**
      * Creates an instance of this class
+     *
      * @param Client $client
      */
     public function __construct(Client $client)
@@ -24,7 +26,9 @@ class PhpGithubApi implements GithubApi
 
     /**
      * Authenticates a user using a token
-     * @param  string $token
+     *
+     * @param string $token
+     *
      * @return $this
      */
     public function authenticateUsingToken($token)
@@ -36,7 +40,9 @@ class PhpGithubApi implements GithubApi
 
     /**
      * Gets the current user's started repositories
-     * @param  array  $parameters
+     *
+     * @param array $parameters
+     *
      * @return array
      */
     public function getUserStarredRepositories(array $parameters = [])

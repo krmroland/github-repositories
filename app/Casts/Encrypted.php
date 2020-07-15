@@ -2,18 +2,19 @@
 
 namespace App\Casts;
 
-use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class Encrypted implements CastsAttributes
 {
     /**
      * Decrypts the given value.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @param  string  $key
-     * @param  mixed  $value
+     * @param \Illuminate\Database\Eloquent\Model $model
+     * @param string $key
+     * @param mixed $value
      * @param array $attributes
+     *
      * @return string|null
      */
     public function get($model, $key, $value, $attributes)
@@ -35,10 +36,11 @@ class Encrypted implements CastsAttributes
     /**
      * Encrypts the given value
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @param  string  $key
-     * @param  array  $value
+     * @param \Illuminate\Database\Eloquent\Model $model
+     * @param string $key
+     * @param array $value
      * @param array $attributes
+     *
      * @return string
      */
     public function set($model, $key, $value, $attributes)

@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
@@ -28,7 +29,10 @@ class RegistrationController extends Controller
         event(new Registered($user));
 
         return response()->json(
-            ['message' => 'User was created successfully', 'user' => $user],
+            [
+                'message' => 'User was created successfully',
+                'user' => $user,
+            ],
             201
         );
     }

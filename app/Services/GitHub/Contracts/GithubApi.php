@@ -6,13 +6,18 @@ interface GithubApi
 {
     /**
      * Gets the started repositories
-     * @param  array  $parameters
+     *
+     * @param array $parameters
+     *
      * @return array
      */
     public function getUserStarredRepositories(array $parameters = []);
+
     /**
      * Authenticates a user using a token
-     * @param  string $token
+     *
+     * @param string $token
+     *
      * @return $this
      */
     public function authenticateUsingToken($token);

@@ -2,25 +2,29 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use Illuminate\Auth\AuthManager;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Http\Request;
 
 class GetGithubStarredReposController extends Controller
 {
     /**
      * The request class
+     *
      * @var Illuminate\Http\Request
      */
     protected $request;
+
     /**
      * The AuthManager class
+     *
      * @var Illuminate\Auth\AuthManager
      */
     protected $auth;
 
     /**
      * Creates an instance of the controller
+     *
      * @param Illuminate\Http\Request $request
      * @param Illuminate\Auth\AuthManager $auth
      */
@@ -46,6 +50,7 @@ class GetGithubStarredReposController extends Controller
 
     /**
      * Gets the starred repositories
+     *
      * @return array
      */
     protected function data()
@@ -58,6 +63,7 @@ class GetGithubStarredReposController extends Controller
 
     /**
      * Gets the data cache key
+     *
      * @return string
      */
     protected function dataCacheKey()
@@ -74,6 +80,7 @@ class GetGithubStarredReposController extends Controller
 
     /**
      * Gets the query parameters
+     *
      * @return array
      */
     protected function queryParameters()

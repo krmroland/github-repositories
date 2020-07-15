@@ -9,11 +9,14 @@ class MissingGithubTokenException extends Exception
 {
     /**
      * The User Model
+     *
      * @var \App\User
      */
     public $user;
+
     /**
      * Creates an instance of this class
+     *
      * @param User $user
      */
     public function __construct(User $user)
@@ -23,6 +26,7 @@ class MissingGithubTokenException extends Exception
 
     /**
      * Renders the current exception into a response
+     *
      * @return Response
      */
     public function render()

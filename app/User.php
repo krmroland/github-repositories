@@ -3,12 +3,11 @@
 namespace App;
 
 use App\Casts\Encrypted;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Notifications\Notifiable;
-use App\Services\GitHub\Contracts\GithubApi;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Exceptions\MissingGithubTokenException;
+use App\Services\GitHub\Contracts\GithubApi;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -37,17 +36,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'github_token' => Encrypted::class,
     ];
+
     /**
      * Sets the password attribute
+     *
      * @param string $password
      */
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
     }
+
     /**
      * The users github client
+     *
      * @throws App\Exceptions\MissingGithubTokenException
+     *
      * @return \App\User\UserGithubTokenClient
      */
     public function gitHub()

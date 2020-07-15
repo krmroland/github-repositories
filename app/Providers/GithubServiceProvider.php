@@ -2,17 +2,15 @@
 
 namespace App\Providers;
 
-use Github\Client;
-use App\Services\GitHub\PhpGithubApi;
-use Illuminate\Support\ServiceProvider;
 use App\Services\GitHub\Contracts\GithubApi;
+use App\Services\GitHub\PhpGithubApi;
+use Github\Client;
+use Illuminate\Support\ServiceProvider;
 
 class GithubServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
-     *
-     * @return void
      */
     public function register()
     {
@@ -23,11 +21,8 @@ class GithubServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap services.
-     *
-     * @return void
      */
     public function boot()
     {
-        //
     }
 }
